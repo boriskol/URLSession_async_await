@@ -83,9 +83,9 @@ struct ContentView: View {
                         let searchId = self.gifs.gifs[0].id
                         await gifs.searchGifId(gifID: searchId!)
                       }
-                    .refreshable {
+                    /*.refreshable {
                           
-                    }
+                    }*/
                     
             }
             .hideNavigationBar()
