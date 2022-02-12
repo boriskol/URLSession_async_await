@@ -17,6 +17,14 @@
 		2CB88DDB27B6EC4E00A1A9C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DB127B6EC4D00A1A9C9 /* ContentView.swift */; };
 		2CB88DDC27B6EC4E00A1A9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB88DB227B6EC4E00A1A9C9 /* Assets.xcassets */; };
 		2CB88DDD27B6EC4E00A1A9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB88DB227B6EC4E00A1A9C9 /* Assets.xcassets */; };
+		2CB88DED27B6EC9D00A1A9C9 /* CallApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DEC27B6EC9D00A1A9C9 /* CallApi.swift */; };
+		2CB88DEE27B6EC9D00A1A9C9 /* CallApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DEC27B6EC9D00A1A9C9 /* CallApi.swift */; };
+		2CB88DF027B6ECC900A1A9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DEF27B6ECC900A1A9C9 /* ViewModel.swift */; };
+		2CB88DF127B6ECC900A1A9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DEF27B6ECC900A1A9C9 /* ViewModel.swift */; };
+		2CB88DF327B6ECF700A1A9C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DF227B6ECF700A1A9C9 /* Model.swift */; };
+		2CB88DF427B6ECF700A1A9C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DF227B6ECF700A1A9C9 /* Model.swift */; };
+		2CB88DF627B6ED1B00A1A9C9 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DF527B6ED1B00A1A9C9 /* Extention.swift */; };
+		2CB88DF727B6ED1B00A1A9C9 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB88DF527B6ED1B00A1A9C9 /* Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,10 @@
 		2CB88DD027B6EC4E00A1A9C9 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB88DD427B6EC4E00A1A9C9 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2CB88DD627B6EC4E00A1A9C9 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		2CB88DEC27B6EC9D00A1A9C9 /* CallApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallApi.swift; sourceTree = "<group>"; };
+		2CB88DEF27B6ECC900A1A9C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2CB88DF227B6ECF700A1A9C9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2CB88DF527B6ED1B00A1A9C9 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,10 @@
 				2CB88DB027B6EC4D00A1A9C9 /* URLSession_async_awaitApp.swift */,
 				2CB88DB127B6EC4D00A1A9C9 /* ContentView.swift */,
 				2CB88DB227B6EC4E00A1A9C9 /* Assets.xcassets */,
+				2CB88DEC27B6EC9D00A1A9C9 /* CallApi.swift */,
+				2CB88DEF27B6ECC900A1A9C9 /* ViewModel.swift */,
+				2CB88DF227B6ECF700A1A9C9 /* Model.swift */,
+				2CB88DF527B6ED1B00A1A9C9 /* Extention.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -299,7 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB88DF327B6ECF700A1A9C9 /* Model.swift in Sources */,
 				2CB88DDA27B6EC4E00A1A9C9 /* ContentView.swift in Sources */,
+				2CB88DED27B6EC9D00A1A9C9 /* CallApi.swift in Sources */,
+				2CB88DF027B6ECC900A1A9C9 /* ViewModel.swift in Sources */,
+				2CB88DF627B6ED1B00A1A9C9 /* Extention.swift in Sources */,
 				2CB88DD827B6EC4E00A1A9C9 /* URLSession_async_awaitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB88DF427B6ECF700A1A9C9 /* Model.swift in Sources */,
 				2CB88DDB27B6EC4E00A1A9C9 /* ContentView.swift in Sources */,
+				2CB88DEE27B6EC9D00A1A9C9 /* CallApi.swift in Sources */,
+				2CB88DF127B6ECC900A1A9C9 /* ViewModel.swift in Sources */,
+				2CB88DF727B6ED1B00A1A9C9 /* Extention.swift in Sources */,
 				2CB88DD927B6EC4E00A1A9C9 /* URLSession_async_awaitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

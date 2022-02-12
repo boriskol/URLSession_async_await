@@ -11,7 +11,10 @@ import SwiftUI
 struct URLSession_async_awaitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //DispatchQueue.main.async {
+                ContentView()
+            //}
+            
         }
     }
 }
