@@ -60,14 +60,10 @@ class ApiLoader {
         return request
     }
     
-    // 1
     func fetchAPI<T: Codable>(urlParams: [String:String], gifacces: String?) async throws -> T {
-        // 2
         let task = Task { () -> T in
-            // 3
             try await fetchAndDecode(url: createUrl(urlParams: urlParams, gifacces: gifacces).url!)
         }
-        // 4
         return try await task.value
     }
     func fetchAndDecode<T: Codable>(url: URL) async throws -> T {

@@ -17,10 +17,8 @@ struct GifObject: Codable {
     let title: String?
     let source_tld: String?
     let rating: String?
-    /// Giphy URL (not gif url to be displayed)
     let url: URL?
     let images: Images?
-    
     struct Images: Codable {
         let fixed_height: Image?
         struct Image: Codable {
@@ -33,7 +31,6 @@ struct GifObject: Codable {
 }
 
 // MARK: SearchResult Model
-///model from api
 struct SearchResult: Codable {
   let id: String?
   let gifUrl: URL?
@@ -47,8 +44,6 @@ struct SearchResult: Codable {
 
 
 // MARK: APGifResponse Model
-/// model from api
-
 struct APGifResponse: Codable {
     let data: GifObject
 }
