@@ -16,11 +16,12 @@ import SwiftUI
 @MainActor
 class MainViewModel: ObservableObject {
     
-    // MARK:  Initializer Dependency injestion
+    
     @Published var gifs = [GifCollectionViewCellViewModel]()
     @Published var gif: GifViewCellViewModel?
     @Published var gifDetail: Bool = false
     
+    // MARK:  Initializer Dependency injestion
     var appiCall: ApiLoader?
     
     init(appiCall: ApiLoader = ApiLoader()){
@@ -57,6 +58,7 @@ class MainViewModel: ObservableObject {
     }
 
     deinit{
+        
         debugPrint("MainViewModel deinit")
     }
 }

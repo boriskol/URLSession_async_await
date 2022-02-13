@@ -76,7 +76,9 @@ class ApiLoader {
         return decodedData
     }
 
-    
+    deinit{
+        debugPrint("ApiLoader deinit")
+    }
 }
 
 extension URLSession {

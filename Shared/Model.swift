@@ -9,25 +9,25 @@ import Foundation
 // MARK: APIListResponse Model
 /// model from api
 struct APIListResponse: Codable {
-    var data: [GifObject]
+    let data: [GifObject]
 }
 
 struct GifObject: Codable {
-    var id: String?
-    var title: String?
-    var source_tld: String?
-    var rating: String?
+    let id: String?
+    let title: String?
+    let source_tld: String?
+    let rating: String?
     /// Giphy URL (not gif url to be displayed)
-    var url: URL?
-    var images: Images?
+    let url: URL?
+    let images: Images?
     
     struct Images: Codable {
-        var fixed_height: Image?
+        let fixed_height: Image?
         struct Image: Codable {
-            var url: URL?
-            var width: String?
-            var height: String?
-            var mp4: URL?
+            let url: URL?
+            let width: String?
+            let height: String?
+            let mp4: URL?
         }
     }
 }
@@ -35,9 +35,9 @@ struct GifObject: Codable {
 // MARK: SearchResult Model
 ///model from api
 struct SearchResult: Codable {
-  var id: String?
-  var gifUrl: URL?
-  var title: String?
+  let id: String?
+  let gifUrl: URL?
+  let title: String?
     enum CodingKeys: String, CodingKey {
         case id
         case gifUrl = "url"
@@ -50,7 +50,7 @@ struct SearchResult: Codable {
 /// model from api
 
 struct APGifResponse: Codable {
-    var data: GifObject
+    let data: GifObject
 }
 
 // MARK: GifCollectionViewCellViewModel Model
