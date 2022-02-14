@@ -78,7 +78,6 @@ class ApiLoader {
 }
 
 extension URLSession {
-    
     func data(with url: URL) async throws -> Data {
         try await withCheckedThrowingContinuation { continuation in
             dataTask(with: url) { data, _, error in

@@ -21,75 +21,31 @@ struct ContentView: View {
                             Text("").frame(width: 0, height: 0)
                         }
                     }
-                    
-                    VStack(alignment: .leading, spacing: 8, content: {
-                        
+                    VStack(alignment: .leading, spacing: 0, content: {
                         // MARK: Gifs
                         Section(header: VStack(alignment: .leading, spacing: 8){
-                            Text("Gifs Traiding").font(.body).foregroundColor(.purple).fontWeight(.bold)
+                            Text("Gifs Traiding").font(.body).foregroundColor(.purple).fontWeight(.bold).padding(.leading)
                         }, content: {
-                            if !self.gifs.gifs.isEmpty{
-                                ScrollView(.vertical, showsIndicators: false) {
-                                    LazyVStack(alignment: .center, spacing: 8) {
-                                        ForEach(self.gifs.gifs, id: \.id) { gif in
-                                            LazyVStack(alignment: .leading, spacing: 8) {
-                                                if let im = gif.Image{
-                                                    HStack(alignment: .center) {
-                                                        AsyncImage(url: im, transaction: .init(animation: .spring(response: 1.6))) { phase in
-                                                                    switch phase {
-                                                                    case .empty:
-                                                                        ProgressView()
-                                                                            .progressViewStyle(.circular)
-                                                                    case .success(let image):
-                                                                        image.resizable()
-                                                                            .aspectRatio(contentMode: .fill)
-                                                                    case .failure:
-                                                                        Text("Failed fetching image. Make sure to check your data connection and try again.")
-                                                                            .foregroundColor(.red)
-                                                                    @unknown default:
-                                                                        Text("Unknown error. Please try again.")
-                                                                            .foregroundColor(.red)
-                                                                    }
-                                                                }
-                                                        .frame(width: geometry.size.width/4, height: geometry.size.width/4, alignment: .center)
-                                                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                                                        
-                                                        if let title = gif.title {
-                                                            VStack{
-                                                                HStack(alignment: VerticalAlignment.center, spacing: 8) {
-                                                                    Text("\(title)")
-                                                                }
-                                                            }
-                                                            Spacer()
-                                                        }
-                                                    }
-                                                }
-                                                
-                                            }.background(Color.clear)
-                                        }
-                                    }
-                                }.background(Color.clear)
-                                    .listRowBackground(Color.clear)
-                            }
+                            List{
+                                ForEach(self.gifs.gifs, id: \.id) { gif in
+                                    GifCell(gif: gif, geometry: geometry)
+                                }
+                            }.listStyle(.plain)
                         })
-                        Spacer()
-                    }
-                            
-                    )}.padding()
-                    
+                    })
                     .task{
                         await gifs.loadGift()
                         await gifs.search(search: "love")
                         let searchId = self.gifs.gifs[0].id
                         await gifs.searchGifId(gifID: searchId!)
-                      }
-                    /*.refreshable {
-                          
-                    }*/
-                    
+                    }
+                    .refreshable {
+                        await gifs.loadGift()
+                    }
+                }//gio
             }
             .hideNavigationBar()
-        }
+        }//nav
         .edgesIgnoringSafeArea(.all)
         .navigationViewStyle(StackNavigationViewStyle())
     }

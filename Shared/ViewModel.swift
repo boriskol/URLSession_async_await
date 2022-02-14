@@ -13,7 +13,7 @@ import SwiftUI
  view model for MainViewController
  observe changes in values
  */
-@MainActor
+
 class MainViewModel: ObservableObject {
     
     
@@ -29,7 +29,7 @@ class MainViewModel: ObservableObject {
     }
     
     
-    func loadGift() async {
+    @MainActor func loadGift() async {
         
         Task(priority: .background, operation: {
             let fp: APIListResponse? = try? await appiCall?.fetchAPI(urlParams: [Constants.rating: Constants.rating, Constants.limit: Constants.limitNum], gifacces: Constants.trending)
@@ -39,7 +39,7 @@ class MainViewModel: ObservableObject {
         })
     }
     
-    func search(search: String) async {
+    @MainActor func search(search: String) async {
         //Task(priority: .userInitiated, operation: {
             let fp: APIListResponse? = try? await appiCall?.fetchAPI(urlParams: [Constants.searchGif: search, Constants.limit: Constants.limitNum], gifacces: Constants.search)
             let d = fp?.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url)
@@ -48,7 +48,7 @@ class MainViewModel: ObservableObject {
             
         //})
     }
-    func searchGifId(gifID: String) async {
+    @MainActor func searchGifId(gifID: String) async {
         Task(priority: .userInitiated, operation: {
         let fp: APGifResponse? = try? await appiCall?.fetchAPI(urlParams: [:], gifacces: gifID)
         let d = GifViewCellViewModel(id: fp?.data.id, title: fp?.data.title, rating: fp?.data.rating, Image: fp?.data.images?.fixed_height?.url, video: fp?.data.images?.fixed_height?.mp4, url: fp?.data.url)
