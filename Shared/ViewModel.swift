@@ -9,10 +9,6 @@ import Combine
 import SwiftUI
 
 // MARK: MainViewModel
-/*
- view model for MainViewController
- observe changes in values
- */
 
 class MainViewModel: ObservableObject {
     

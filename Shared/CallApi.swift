@@ -27,7 +27,7 @@ extension Constants {
     static let trending = "trending"
     static let searchGif = "q"
     static let search = "search"
-    static let limitNum = "25"
+    static let limitNum = "50"
     static let limit = "limit"
     static let rating = "g"
     static let lang = "en"
